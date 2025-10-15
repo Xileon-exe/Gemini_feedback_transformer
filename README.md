@@ -1,6 +1,6 @@
 # ✨ Gemini Feedback Transformer
 
-[![Mozilla Add-on](https://img.shields.io/amo/v/{addon-id}?label=Firefox%20Add-on&logo=firefox)](https://addons.mozilla.org/firefox/addon/your-addon-slug/)
+[![Mozilla Add-on](https://img.shields.io/amo/v/{addon-id}?label=Firefox%20Add-on&logo=firefox)](https://addons.mozilla.org/fr/firefox/addon/gemini-feedback-transformer/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Manifest](https://img.shields.io/badge/Manifest-V3-brightgreen.svg)](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
 
@@ -26,7 +26,7 @@ Une extension Firefox qui transforme automatiquement les messages de feedback de
 
 ### 🎆 Via Mozilla Add-ons (Recommandé)
 
-**[Installer depuis Mozilla Add-ons](https://addons.mozilla.org/firefox/addon/your-addon-slug/)** ← **Version officielle signée**
+**[Installer depuis Mozilla Add-ons](https://addons.mozilla.org/fr/firefox/addon/gemini-feedback-transformer/)** ← **Version officielle signée**
 
 - ✅ Installation en un clic
 - ✅ Mises à jour automatiques
@@ -158,7 +158,7 @@ Les contributions sont les bienvenues ! 🎉
 
 ## 👥 Crédits
 
-- 🚀 **Développé** par [Xiléon](https://github.com/votre-username) avec ❤️
+- 🚀 **Développé** par [Xiléon](https://github.com/Xileon-exe) 
 - 🤖 **Assisté** par Warp AI pour l'optimisation
 - 🎆 **Inspiré** par le besoin d'améliorer l'expérience Gemini
 
@@ -176,3 +176,4 @@ Les contributions sont les bienvenues ! 🎉
 **⭐ Si cette extension vous a aidé, n'hésitez pas à lui donner une étoile sur GitHub ! ⭐**
 
 </div>
+
