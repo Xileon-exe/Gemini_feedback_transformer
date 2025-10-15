@@ -1,63 +1,71 @@
-# Gemini Feedback Transformer
+# ✨ Gemini Feedback Transformer
 
-Une extension Firefox qui transforme l'affichage des messages de feedback de Gemini en blocs visuels avec étoiles et commentaires.
+[![Mozilla Add-on](https://img.shields.io/amo/v/{addon-id}?label=Firefox%20Add-on&logo=firefox)](https://addons.mozilla.org/firefox/addon/your-addon-slug/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Manifest](https://img.shields.io/badge/Manifest-V3-brightgreen.svg)](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
 
-## 📋 Description
+Une extension Firefox qui transforme automatiquement les messages de feedback de Gemini en blocs visuels élégants avec étoiles et commentaires colorés.
 
-Cette extension détecte automatiquement les messages de feedback de Gemini affichés entre crochets (par exemple `[4 étoiles: Très bonne réponse]`) et les transforme en blocs visuels attrayants avec :
-- Un système d'étoiles colorées (1-5 étoiles)
-- Le commentaire affiché de manière lisible
-- Un design adaptatif qui s'intègre naturellement dans la conversation
+## 🎆 Aperçu
 
-## 🚀 Installation
+**Avant :** `[4 étoiles: Très bonne réponse]`
 
-### ⭐ Installation Permanente (Recommandée)
+**Après :** 🌟🌟🌟🌟☆ **Très bonne réponse** (bloc coloré)
 
-L'extension est maintenant en **Manifest V3** et disponible sous forme de package `.xpi` pour une installation permanente.
+## 🚀 Caractéristiques
 
-**📦 Fichier prêt à installer :** `gemini-feedback-transformer-v3.xpi`
+- ✨ **Détection automatique** des messages de feedback entre crochets
+- 🌟 **Système d'étoiles** colorées (1-5 étoiles)
+- 🎨 **Blocs colorés** selon la note (rouge → vert)
+- 📱 **Design responsive** avec animations fluides
+- 🌙 **Mode sombre** automatique
+- ⚡ **Performance optimisée** avec MutationObserver
+- 🔒 **Sécurisé** avec Manifest V3
 
-#### Méthode 1 : Via addons.mozilla.org (Recommandée)
-1. Téléversez le fichier `.xpi` sur [addons.mozilla.org](https://addons.mozilla.org) en mode "Unlisted"
-2. Téléchargez la version signée
-3. Dans Firefox : `about:addons` → ⚙️ → "Installer un module depuis un fichier..."
-4. L'extension restera active après redémarrage ✅
+## 📦 Installation
 
-#### Méthode 2 : Politique d'entreprise (Windows)
-1. Créez `%PROGRAMFILES%\Mozilla Firefox\distribution\policies.json`
-2. Configurez l'installation forcée (voir `INSTALLATION_PERMANENTE.md`)
-3. Redémarrez Firefox → Extension installée automatiquement ✅
+### 🎆 Via Mozilla Add-ons (Recommandé)
 
-📋 **Guide détaillé :** Consultez `INSTALLATION_PERMANENTE.md` pour toutes les méthodes
+**[Installer depuis Mozilla Add-ons](https://addons.mozilla.org/firefox/addon/your-addon-slug/)** ← **Version officielle signée**
 
-### Installation temporaire (développement uniquement)
+- ✅ Installation en un clic
+- ✅ Mises à jour automatiques
+- ✅ Extension permanente (ne disparaît pas au redémarrage)
 
-⚠️ **Attention :** Cette méthode est temporaire et l'extension disparaîtra au redémarrage de Firefox.
+### 🔧 Installation développeur
 
-1. **Cloner le projet**
+1. **Cloner le dépôt**
    ```bash
-   git clone https://github.com/username/gemini-feedback-firefox-extension.git
+   git clone https://github.com/votre-username/gemini-feedback-firefox-extension.git
    cd gemini-feedback-firefox-extension
    ```
 
-2. **Installation développeur**
-   - Ouvrez Firefox : `about:debugging`
-   - "Ce Firefox" → "Charger un module complémentaire temporaire"
+2. **Charger l'extension**
+   - Ouvrez Firefox et allez dans `about:debugging`
+   - Cliquez sur "Ce Firefox"
+   - Cliquez sur "Charger un module complémentaire temporaire"
    - Sélectionnez le fichier `manifest.json`
 
-## 💡 Utilisation
+   ⚠️ **Note :** L'installation développeur est temporaire et disparaîtra au redémarrage de Firefox.
 
-1. **Visitez Gemini** : Rendez-vous sur `gemini.google.com`
-2. **Feedback automatique** : L'extension détecte automatiquement les messages de feedback entre crochets
-3. **Transformation visuelle** : Les messages sont instantanément transformés en blocs colorés
+### 📄 Installation alternative
 
-### Formats supportés
+Consultez [`INSTALLATION_PERMANENTE.md`](INSTALLATION_PERMANENTE.md) pour d'autres méthodes d'installation permanente.
 
-L'extension reconnaît ces formats de feedback :
-- `[3 étoiles: Bonne explication]`
-- `[5 stars: Excellent response!]`
-- `[1 étoile : Réponse insuffisante]`
-- `[4 étoiles - Très utile]`
+## 🎁 Utilisation
+
+1. **Visitez Gemini** : Allez sur [gemini.google.com](https://gemini.google.com)
+2. **Automatique** : L'extension détecte et transforme les feedbacks instantanément
+3. **Profitez** : Vos messages de feedback sont maintenant visuellement élégants !
+
+### 📝 Formats supportés
+
+| Format | Exemple | Résultat |
+|--------|---------|----------|
+| **Français** | `[4 étoiles: Très utile]` | 🌟🌟🌟🌟☆ **Très utile** |
+| **Anglais** | `[5 stars: Perfect!]` | 🌟🌟🌟🌟🌟 **Perfect!** |
+| **Tiret** | `[3 étoiles - Correct]` | 🌟🌟🌟☆☆ **Correct** |
+| **JSON** | `{"note":5,"description":"Génial"}` | 🌟🌟🌟🌟🌟 **Génial** |
 
 ## 🎨 Caractéristiques
 
@@ -70,78 +78,101 @@ L'extension reconnaît ces formats de feedback :
 
 ## 🔧 Développement
 
-### Structure du projet
+### 📁 Structure du projet
 
 ```
 gemini-feedback-firefox-extension/
-├── manifest.json          # Configuration de l'extension
-├── content-script.js      # Script principal de transformation
-├── styles.css            # Styles pour les blocs de feedback
-├── README.md             # Documentation
-└── icons/               # Icônes de l'extension (à ajouter)
+├── manifest.json              # Configuration Manifest V3
+├── content-script.js          # Script principal (ES6+)
+├── styles.css                # Styles CSS3 avec animations
+├── icons/                    # Icônes PNG (16,32,48,128px)
+├── README.md                 # Documentation
+├── CHANGELOG.md              # Historique des versions
+├── LICENSE                   # Licence MIT
+└── INSTALLATION_PERMANENTE.md # Guide installation
 ```
 
-### Technologies utilisées
+### 🛠️ Technologies
 
-- **JavaScript ES6+** : Logique de détection et transformation
-- **CSS3** : Styles et animations
-- **Firefox WebExtensions API** : Intégration navigateur
+- ⚙️ **Manifest V3** : Standard moderne Firefox
+- 📜 **JavaScript ES6+** : Classes, MutationObserver, DOM API
+- 🎨 **CSS3** : Gradients, animations, responsive design
+- 🔍 **MutationObserver** : Détection temps réel des nouveaux messages
+- 🔒 **Content Security Policy** : Sécurité renforcée
 
-### Développement local
+### 📝 Développement local
 
-1. Modifier les fichiers source
-2. Recharger l'extension dans `about:debugging`
-3. Tester sur `gemini.google.com`
+1. **Fork** ce dépôt
+2. **Cloner** votre fork
+3. **Modifier** les fichiers source
+4. **Tester** : Rechargez l'extension dans `about:debugging`
+5. **Valider** sur [gemini.google.com](https://gemini.google.com)
 
-## 🐛 Résolution de problèmes
+## 🐛 Dépannage
 
-### L'extension ne fonctionne pas
-- Vérifiez que l'extension est activée dans `about:addons`
-- Rechargez la page Gemini
-- Vérifiez la console du navigateur pour les erreurs
+<details>
+<summary><b>L'extension ne fonctionne pas</b></summary>
 
-### Les blocs ne s'affichent pas
-- Assurez-vous que le format du feedback est correct
-- Vérifiez que vous êtes bien sur `gemini.google.com`
-- Essayez de recharger l'extension
+- ✅ Vérifiez que l'extension est **activée** dans `about:addons`
+- 🔄 **Rechargez** la page Gemini
+- 🛠️ Ouvrez la **console développeur** (F12) pour voir les erreurs
+- 🔄 **Redémarrez** Firefox si nécessaire
 
-## 📏 Changelog
+</details>
 
-### v1.1.0 (Actuel) - 2025-10-15
-- ⭐ **Migration vers Manifest V3** : Extension moderne et compatible future
-- 💻 **Installation permanente** : Fini les extensions éphémères
-- 🎨 **Icônes d'extension** : Visuels professionnels aux bonnes tailles
-- 📦 **Package .xpi** : Prêt à installer, signé par Mozilla
-- 📄 **Documentation complète** : Guide d'installation permanent détaillé
+<details>
+<summary><b>Les blocs ne s'affichent pas</b></summary>
 
-### v1.0.0 - 2025-10-15
-- Détection automatique des messages de feedback
-- Transformation en blocs avec étoiles
-- Support des formats français et anglais
-- Design responsive et mode sombre
+- 📝 Vérifiez le **format** : `[X étoiles: commentaire]` ou `[X stars: comment]`
+- 🌐 Confirmez que vous êtes sur **gemini.google.com**
+- ⏱️ Attendez quelques secondes (détection automatique)
+- 🔄 Essayez de **recharger l'extension** dans `about:debugging`
 
-Voir `CHANGELOG.md` pour plus de détails.
+</details>
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! Pour contribuer :
+Les contributions sont les bienvenues ! 🎉
 
-1. Fork le projet
-2. Créez une branche pour votre fonctionnalité
-3. Committez vos changements
-4. Poussez vers la branche
-5. Ouvrez une Pull Request
+### 🚀 Comment contribuer
+
+1. 🍴 **Fork** ce dépôt
+2. 🌱 **Créez** une branche : `git checkout -b feature/amazing-feature`
+3. ✨ **Développez** votre fonctionnalité
+4. ✅ **Testez** sur Gemini
+5. 📝 **Commitez** : `git commit -m 'feat: Add amazing feature'`
+6. 🚀 **Push** : `git push origin feature/amazing-feature`
+7. 📨 **Ouvrez** une Pull Request
+
+### 💡 Idées de contribution
+
+- 🌍 Support d'autres langues
+- 🎨 Nouveaux thèmes visuels
+- 🔧 Améliorations des performances
+- 📝 Documentation
+- 🐛 Corrections de bugs
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+[MIT License](LICENSE) - Libre d'utilisation, modification et distribution
 
-## 👥 Auteur
+## 👥 Crédits
 
-Développé avec ❤️ pour améliorer l'expérience utilisateur de Gemini.
+- 🚀 **Développé** par [Xiléon](https://github.com/votre-username) avec ❤️
+- 🤖 **Assisté** par Warp AI pour l'optimisation
+- 🎆 **Inspiré** par le besoin d'améliorer l'expérience Gemini
 
-## 🔗 Liens
+## 🔗 Liens utiles
 
-- [Repository GitHub](https://github.com/username/gemini-feedback-firefox-extension)
-- [Firefox Add-ons Store](https://addons.mozilla.org) (bientôt disponible)
-- [Signaler un bug](https://github.com/username/gemini-feedback-firefox-extension/issues)
+- 🌐 **[Mozilla Add-on Store](https://addons.mozilla.org/firefox/addon/your-addon-slug/)** ← Version officielle
+- 🐛 **[Signaler un bug](https://github.com/votre-username/gemini-feedback-firefox-extension/issues)**
+- 💬 **[Discussions](https://github.com/votre-username/gemini-feedback-firefox-extension/discussions)**
+- 📚 **[Guide détaillé](INSTALLATION_PERMANENTE.md)**
+
+---
+
+<div align="center">
+
+**⭐ Si cette extension vous a aidé, n'hésitez pas à lui donner une étoile sur GitHub ! ⭐**
+
+</div>
