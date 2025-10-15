@@ -38,7 +38,7 @@ gemini-feedback-firefox-extension/
 
 ## 📦 Création du package final
 
-Le fichier `MOZILLA-ULTIMATE-FIX-CAFE.zip` soumis contient exactement :
+Le fichier `Gemini_feedback_transformer.zip` soumis contient exactement :
 - `manifest.json` (source identique)
 - `content-script.js` (source identique)  
 - `styles.css` (source identique)
@@ -69,5 +69,6 @@ Pour vérifier que le code source correspond à l'extension :
 3. Aucun processus de build requis
 
 ## 📝 Notes pour les réviseurs Mozilla
+
 
 Cette extension utilise uniquement du code vanilla sans aucune dépendance externe ou processus de compilation. Le code source fourni est directement utilisable dans Firefox sans modification.
